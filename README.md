@@ -209,4 +209,17 @@ docker-compose start
 ## Injeção de dependência
 
 ### Conhecendo TSyringe
+Funciona como um facilitador de dependencia
+
+yarn add tsyringe
+
+Agora vamos fazer as injeções do UseCase
+
+Criar uma pasta no src, chamada: shared
+E dentro da pasta shared, criar outra pasta: container
+E dentro da pasta: container criar um arquivo: index.ts
+
+img019
+
+### Refatorando as especificações
 
