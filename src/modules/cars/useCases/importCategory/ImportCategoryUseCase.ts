@@ -1,14 +1,19 @@
-import csvParse from 'csv-parse';
-import fs from 'fs';
-import { ICategoriesRepository } from '../../repositories/ICategoriesRepository';
+import csvParse from "csv-parse";
+import fs from "fs";
+import { inject, injectable } from "tsyringe";
+import { ICategoriesRepository } from "../../repositories/ICategoriesRepository";
 
 interface IImportCategory {
   name: string;
   description: string;
 }
 
+@injectable()
 class ImportCategoryUseCase {
-  constructor(private categoriesRepository: ICategoriesRepository) { }
+  constructor(
+    @inject("CategoriesRepository")
+    private categoriesRepository: ICategoriesRepository
+  ) {}
 
   loadCategories(file: Express.Multer.File): Promise<IImportCategory[]> {
     return new Promise((resolve, reject) => {
@@ -20,19 +25,20 @@ class ImportCategoryUseCase {
 
       stream.pipe(parseFile);
 
-      parseFile.on('data', async (line) => {
-        const [name, description] = line;
-        categories.push({
-          name,
-          description,
-        });
-      })
-        .on('end', () => {
+      parseFile
+        .on("data", async (line) => {
+          const [name, description] = line;
+          categories.push({
+            name,
+            description,
+          });
+        })
+        .on("end", () => {
           //Remoção de um arquivo que não precisa mais
           fs.promises.unlink(file.path);
           resolve(categories);
         })
-        .on('error', (err) => {
+        .on("error", (err) => {
           reject(err);
         });
     });
@@ -40,13 +46,13 @@ class ImportCategoryUseCase {
   async execute(file: Express.Multer.File): Promise<void> {
     const categories = await this.loadCategories(file);
 
-    categories.map(async category => {
+    categories.map(async (category) => {
       const { name, description } = category;
       //A categoria
-      const existCategory = this.categoriesRepository.findByName(name);
+      const existCategory = await this.categoriesRepository.findByName(name);
       //Se não existir uma categoria, então criar
       if (!existCategory) {
-        this.categoriesRepository.create({
+        await this.categoriesRepository.create({
           name,
           description,
         });
