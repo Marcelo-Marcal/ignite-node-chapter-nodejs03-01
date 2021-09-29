@@ -223,3 +223,39 @@ img019
 
 ### Refatorando as especificações
 
+### Criando migration de especificação
+
+Criação da migration:
+yarn typeorm migration:create -n CreateSpecifications
+
+Rodar a migration:
+yarn typeorm migration:run
+
+### Continuação da documentação
+
+Vamos entra no no arquivo: swagger.json:
+http://localhost:3333/api-docs/
+
+Criação da documentação de importe e specificação
+img020
+
+Criação de aplicação para arquivo csv:
+"multipart/form-data": { }
+
+```
+"multipart/form-data": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "file": {
+                    "type": "string",
+                    "format": "binary"
+                  }
+                }
+              }
+            }
+```
+img021
+
+
+
