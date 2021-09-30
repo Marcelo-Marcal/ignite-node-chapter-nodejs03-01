@@ -1,7 +1,7 @@
 # ignite-node-chapter-nodejs03-01
 ### Chapter III
 
-## Conhecendo o Docker:
+## 1 Conhecendo o Docker:
 ### Criando nosso primeiro container e Dockerfile
   crisção do Dockerfile
 img 01
@@ -84,7 +84,7 @@ Ver os logs que estão passando na aplicação:
 E pra observa o logs
   docker logs -f
 
-## Trabalhando com Banco de Dados
+## 2 Trabalhando com Banco de Dados
 
 ### Conhecendo as formas de usar o banco de dados
 
@@ -206,7 +206,7 @@ docker ps
 Reiniciar os serviços que não estão de pé:
 docker-compose start
 
-## Injeção de dependência
+## 3 Injeção de dependência
 
 ### Conhecendo TSyringe
 Funciona como um facilitador de dependencia
@@ -257,5 +257,20 @@ Criação de aplicação para arquivo csv:
 ```
 img021
 
+## 4 Usuário
 
+### Criando migration de usuário
+
+Criação da migration com a tabela de Usuario:
+yarn typeorm migration:create -n CreateUsers
+
+img022
+
+Rodar a migration:
+yarn typeorm migration:run
+
+Criar a entidade de Usuario:
+E criar um modulo, na pasta modules outra pasta chamado: accounts.
+E dentro da pasta chamada accounts, outra pasta chamada: entities.
+E dentro da pasta entities, um arquivo chamado: User.ts
 
