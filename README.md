@@ -274,3 +274,9 @@ E criar um modulo, na pasta modules outra pasta chamado: accounts.
 E dentro da pasta chamada accounts, outra pasta chamada: entities.
 E dentro da pasta entities, um arquivo chamado: User.ts
 
+### Criando repositório de usuário
+
+Criar a dentro de accounts uma pasta repositories
+E criar a interface dentro da mesma pasta
+
+IUsersRepository.ts
