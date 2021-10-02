@@ -280,3 +280,6 @@ Criar a dentro de accounts uma pasta repositories
 E criar a interface dentro da mesma pasta
 
 IUsersRepository.ts
+
+### Criando controller de usuário
+
