@@ -283,3 +283,18 @@ IUsersRepository.ts
 
 ### Criando controller de usuário
 
+### Alterar tabela de usuário
+
+Criação da migration com a tabela de Aterar  e deletar Usuario:
+yarn typeorm migration:create -n AlterUserDeleteUsername
+
+
+Rodar a migration:
+yarn typeorm migration:run
+
+### Criptografrar senha
+Instalar a biblioteca:
+yarn add bcrypt
+
+Instalar as tipagens:
+yarn add @types/bcrypt -D
