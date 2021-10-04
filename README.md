@@ -323,3 +323,15 @@ img025
 
 img026
 
+### Autenticação nas rotas
+
+### Tratamento de exceções
+
+Instalar a biblioteca:
+yarn add express-async-errors
+
+Log
+docker logs rentx -f
+
+## Avatar de Usuário
+### Adicionando coluna de avatar
