@@ -298,3 +298,28 @@ yarn add bcrypt
 
 Instalar as tipagens:
 yarn add @types/bcrypt -D
+
+Verificação para ver se já existe um usuario com esse email.
+Que ira busca dentro do usersRepository
+img023
+
+### Entendendo autenticação com JWT
+Vai gerar um token
+
+### Criando token do usuário
+Instalar a biblioteca:
+yarn add jsonwebtoken
+
+Instalar as tipagens:
+yarn add @types/jsonwebtoken -D
+
+https://www.md5hashgenerator.com/
+
+Teste no insomnia:
+img024
+
+E para trazer somente o nome e email:
+img025
+
+img026
+
