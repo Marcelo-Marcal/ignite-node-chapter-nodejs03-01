@@ -335,3 +335,22 @@ docker logs rentx -f
 
 ## Avatar de Usuário
 ### Adicionando coluna de avatar
+
+criar uma pasta updateUserAvatar
+E criar um arquivo dentro dela: UpdateUserAvatarUseCase.ts
+
+- Adicionar coluna avatar na tabela de users
+  Criação da migration com a tabela de Aterar  e deletar Usuario:
+  yarn typeorm migration:create -n AlterUserAddAvatar
+
+  Rodar a migration:
+  yarn typeorm migration:run
+
+- Refatotora usuario com coluna avatar
+
+- Configuração upload no multer
+
+- Criar a regra de negocio do upload
+
+- Criar controller
+
