@@ -346,11 +346,21 @@ E criar um arquivo dentro dela: UpdateUserAvatarUseCase.ts
   Rodar a migration:
   yarn typeorm migration:run
 
-- Refatotora usuario com coluna avatar
+- Refatotora usuario com coluna avatar: entities/User.ts
+  @Column()
+  avatar: string;
 
 - Configuração upload no multer
 
 - Criar a regra de negocio do upload
 
 - Criar controller
+  
+Crias uma pasta dentro do src/ @type
+Destro dela outra pasta @type/ express
+Destro dela outra pasta express/ index.d.ts
+
+### Upload de avatar
+Deleta manualmente no banco de dados:
+DELETE FROM USERS WHERE ID = 'c3b63a2a-1ea0-4339-bd18-f9ca03cd7f51'
 
