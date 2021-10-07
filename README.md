@@ -361,6 +361,15 @@ Destro dela outra pasta @type/ express
 Destro dela outra pasta express/ index.d.ts
 
 ### Upload de avatar
-Deleta manualmente no banco de dados:
-DELETE FROM USERS WHERE ID = 'c3b63a2a-1ea0-4339-bd18-f9ca03cd7f51'
+```Deleta manualmente no banco de dados:```
+` DELETE FROM USERS WHERE ID = 'c3b63a2a-1ea0-4339-bd18-f9ca03cd7f51' `
 
+### Remover arquivo de avatar existente
+
+Crias uma pasta dentro do src/ utils
+Destro dela outra pasta utils/ file.ts
+
+Ateração dentro de UpdateUserAvatarUseCase.ts
+img027
+
+Fim
